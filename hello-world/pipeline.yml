@@ -1,0 +1,15 @@
+---
+resources:
+  - name: hello-world-repo
+    type: git
+    source:
+      uri: https://github.com/Ramkumar71193/concourse
+      branch: feature/DATAFRAMEWORKS-XXXX-hello-world
+    
+
+jobs:
+  - name: run-hello-world-task
+    plan:
+      - get: hello-world-repo
+      - task: hello-world
+        file: hello-world-repo/hello-world/tasks/hello-world-task.yml
