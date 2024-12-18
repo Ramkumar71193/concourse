@@ -1,0 +1,13 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: busybox
+
+inputs:
+  - name: hello-world
+
+run:
+  path: concourse/hello-world/tasks/hello-world.sh
